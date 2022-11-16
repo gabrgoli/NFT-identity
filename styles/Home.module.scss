@@ -1,0 +1,526 @@
+$primary-color: #0081FF;
+$text-color-primary: #000000;
+$text-color-secondary: #979797;
+
+$gray2: #8a8d90;
+$white: #f2f2f2;
+
+.container {
+  padding: 17px;
+  width: 100%;
+
+
+}
+
+.pageBody {
+  margin: 0 0 0 7%;
+}
+
+.contactButton {
+  cursor: pointer;
+}
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  background-image: url("/images/social/social-group.png");
+  background-position: top -200px right -20px;
+  background-repeat: no-repeat;
+  background-size: 410px;
+
+  @media (min-width: 500px) {
+    background-position: top -150px right -20px;
+    background-size: 510px;
+  }
+
+  @media (min-width: 1024px) {
+    background-position: top 70px right 20px;
+    background-size: 507px;
+  }
+
+  .heroInfo {
+    max-width: 900px;
+
+    @media (min-width: 1024px) {
+      max-width: 1400px;
+      width: 100%;
+
+      .heroText {
+        max-width: 354px;
+      }
+
+      .itemDescription {
+        font-size: 24px;
+        line-height: 33px;
+      }
+
+      button {
+        max-width: 300px;
+      }
+    }
+
+    button {
+      margin: 30px 0;
+    }
+  }
+}
+
+.createButton {
+  width: 175px;
+  height: 60px;
+  color: $white;
+
+  background: #0081FF;
+
+  font-family: 'Space Grotesk', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 32px;
+
+  text-align: center;
+}
+
+.backgroundSecondary {
+  background-color: $white;
+}
+
+.benefitsList {
+  list-style-type: none;
+  margin-left: -40px;
+
+  li {
+    display: inline;
+    justify-content: center !important;
+
+    button {
+      box-sizing: border-box;
+      border: 2px solid #000000;
+      border-radius: 40px;
+      background-color: #ffffff;
+      height: 48px;
+      margin: 2px;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 32px;
+      color: #000000;
+
+      &.one {
+        width: 196px;
+        @media (max-width:800px) {
+          width: 100%;
+        }
+      }
+
+      &.two {
+        width: 239px;
+        @media (max-width:800px) {
+          width: 100%;
+        }
+      }
+
+      &.three {
+        width: 185px;
+        @media (max-width:800px) {
+          width: 100%;
+        }
+      }
+
+      &.four {
+        width: 251px;
+        @media (max-width:800px) {
+          width: 100%;
+        }
+      }
+
+      &.five {
+        width: 347px;
+        @media (max-width:800px) {
+          width: 100%;
+        }
+      }
+
+      &.six {
+        width: 257px;
+        @media (max-width:800px) {
+          width: 100%;
+        }
+      }
+
+      &.seven {
+        width: 415px;
+        @media (max-width:800px) {
+          width: 100%;
+        }
+       
+      }
+
+      &.a {
+        width: 230px;
+      }
+
+      &.b {
+        width: 265px;
+      }
+
+      &.c {
+        width: 145px;
+      }
+
+      &.d {
+        width: 162px;
+      }
+
+      &.e {
+        width: 193px;
+      }
+
+      &.f {
+        width: 114px;
+      }
+
+      &.g {
+        width: 184px;
+      }
+
+      &.h {
+        width: 169px;
+      }
+
+      &.i {
+        width: 134px;
+      }
+
+      &.j {
+        width: 222px;
+      }
+
+      &.k {
+        width: 258px;
+      }
+
+      &.l {
+        width: 238px;
+      }
+    }
+  }
+
+}
+
+.benefitsTitle {
+  font-family: 'Space Grotesk', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 32px;
+  color: #000000;
+  margin-top: 100px;
+}
+
+
+
+.item {
+
+  @media (min-width: 1024px) {
+    max-width: 1149px;
+    margin-top: 80px;
+    margin-left: 0;
+
+    h3.itemNumber {
+      margin-top: 0;
+      position: relative;
+
+      &:after {
+        content: "";
+        width: 48px;
+        height: 1px;
+        position: absolute;
+        top: 20px;
+        left: 50px;
+      }
+    }
+
+    .socialButtons {
+      margin: 5px;
+      .gridItem {
+        margin-bottom: 15px;
+        width: 280px;
+        height: 48px;
+        float:left;
+        border-radius: 40px;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+.showArea {
+
+  .showMore {
+    display: none;
+  }
+
+  .checkbox {
+    display: none;
+  }
+
+  .checkbox:checked {
+    +.showMore {
+      
+       display: block;
+    }
+
+    ~label>.dividerMore {
+      display: none;
+    }
+
+    ~label>.dividerLess {
+      display: block;
+    }
+  }
+}
+
+.dividerMore {
+  b {
+    font-size: 20px;
+    line-height: 32px;
+  }
+}
+
+.dividerLess {
+  display: none;
+  font-size: 20px;
+  line-height: 32px;
+}
+
+p.itemDescription {
+  width: 650px;
+  @media (max-width:800px) {
+    width: 100%;
+  }
+
+  .mailLink {
+    color: $primary-color;
+  }
+
+  &.gray {
+    color: $text-color-secondary;
+  }
+}
+
+div.itemDescription p {
+  font-family: 'Space Grotesk', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 32px;
+
+  color: $text-color-primary;
+  max-width: 486px;
+
+}
+
+.transferDID {
+  u {
+    text-decoration-line: underline;
+    color: #0081FF;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 32px;
+  }
+
+  div.gray {
+    color: $text-color-secondary;
+    width: 741px;
+  }
+
+  ol {
+    list-style-type: none;
+  }
+
+  .smallItemNumber {
+
+    width: 26px;
+    height: 32px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 32px;
+    margin-bottom: -20px;
+
+    color: #0081FF;
+  }
+}
+
+h1.titleText {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 56px;
+  line-height: 64px;
+  font-weight: 700;
+  font-style: normal;
+  margin-top: 90px;
+}
+
+h2.titleText {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 36px;
+}
+
+select.storageSelect {
+  
+  width: 400px;
+  padding: 10px 20px;
+  height: 60px;
+  background: transparent;
+  font-size: 20px;
+  margin-top: 35px;
+  border: 2px solid #000000;
+  @media (max-width: 1024px) {
+    width: 250px;
+    margin-left: auto;
+  }
+
+  option {
+    appearance: none;
+    background: $white;
+  }
+}
+
+h3.itemNumber {
+  margin-top: 60px;
+  margin-bottom: 15px;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 36px;
+  color: $primary-color;
+}
+
+.NFT,
+.NFTIdentity,
+.NFTRights,
+.NFTAnchor,
+.did,
+label .inline .img2 {
+  display: none;
+}
+
+.checkboxNFT,
+.checkboxNFTIdentity,
+.checkboxNFTRights,
+.checkboxNFTAnchor,
+.checkboxDID {
+  display: none;
+}
+
+.checkboxNFT:checked {
+  +label .inline .img1 {
+    display: none;
+  }
+
+  +label .inline .img2 {
+    display: block;
+  }
+
+  ~.NFT {
+    display: block;
+  }
+}
+
+.checkboxNFTIdentity:checked {
+  +label .inline .img1 {
+    display: none;
+  }
+
+  +label .inline .img2 {
+    display: block;
+  }
+
+  ~.NFTIdentity {
+    display: block;
+  }
+}
+
+.checkboxNFTRights:checked {
+  +label .inline .img1 {
+    display: none;
+  }
+
+  +label .inline .img2 {
+    display: block;
+  }
+
+  ~.NFTRights {
+    display: block;
+  }
+}
+
+.checkboxNFTAnchor:checked {
+  +label .inline .img1 {
+    display: none;
+  }
+
+  +label .inline .img2 {
+    display: block;
+  }
+
+  ~.NFTAnchor {
+    display: block;
+  }
+}
+
+.checkboxDID:checked {
+  +label .inline .img1 {
+    display: none;
+  }
+
+  +label .inline .img2 {
+    display: block;
+  }
+
+  ~.did {
+    display: block;
+  }
+}
+
+.inline {
+  display: flex;
+  justify-content: space-between;
+  img {
+    height: 36px;
+    vertical-align: middle;
+    justify-self: right;
+  }
+}
+
+.item hr {
+  background: $text-color-primary;
+  height: 3px;
+}
+
+.marketplace {
+  width: 100%;
+  padding: 24px 32px;
+  box-shadow: 0px 0px 20px rgba(160, 163, 167, 0.2);
+  border-radius: 16px;
+
+  p {
+    font-size: 18px;
+    line-height: 25px;
+    text-align: center;
+    font-weight: 600;
+    margin-top: 0;
+  }
+
+  @media (min-width: 1024px) {
+    width: 343px;
+  }
+}
+
+.gridItemdisabled{
+  display: none !important;
+}

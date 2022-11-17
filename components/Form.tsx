@@ -22,7 +22,7 @@ const Form = () => {
     const validate=(ev:any)=>{
 
       //validate that mobile number its must be a number  
-      if(ev.target.name==='mobileNumber'&&(!(/\d/.test(ev.target.value))&& ev.target.value!=='')){return}
+      //if(ev.target.name==='mobileNumber'&&(!(/\d/.test(ev.target.value))&& ev.target.value!=='')){return}
       
       setInput((input)=>({...input,[ev.target.name]:ev.target.value}))
       setErrors((errors)=>({...errors,[ev.target.name]:""}))
@@ -86,7 +86,9 @@ const Form = () => {
 
         console.log("errors mostrar:",errors)
 
-        errors.amount||errors.email||errors.mobileNumber||errors.walletAdress||errors.walletPool?console.log("hay errores"):console.log("envio completo",input)  
+        errors.amount||errors.email||errors.mobileNumber||errors.walletAdress||errors.walletPool
+          ?console.log("hay errores")
+          :console.log("envio completo",input)  
     }
 
   return (
@@ -101,11 +103,11 @@ const Form = () => {
     <input type="text" name="walletAdress" value={input.walletAdress} placeholder="Wallet Adress" onChange={(ev)=>validate(ev)} style={errors.walletAdress?{border:"2px solid red"}:{}} className={errors.walletAdress&&"form2"}/>
     <input type="submit" onClick={(e)=>handleSubmit(e)} name="next" className="next action-button" value="Next" onChange={(ev)=>validate(ev)}  />
     <section className="errorsClass">
-        {errors.walletPool?<>{errors.walletPool} <br/></>:<></>}
-        {errors.amount?<>{errors.amount} <br/></>:<></>}
-        {errors.email?<>{errors.email} <br/></>:<></>}
-        {errors.mobileNumber?<>{errors.mobileNumber} <br/></>:<></>}
-        {errors.walletAdress?<>{errors.walletAdress} <br/></>:<></>}
+        {errors.walletPool?<div>{errors.walletPool} </div>:<></>}
+        {errors.amount?<div>{errors.amount} </div>:<></>}
+        {errors.email?<div>{errors.email} </div>:<></>}
+        {errors.mobileNumber?<div>{errors.mobileNumber} </div>:<></>}
+        {errors.walletAdress?<div>{errors.walletAdress} </div>:<></>}
     </section>
   </div>
 </form>

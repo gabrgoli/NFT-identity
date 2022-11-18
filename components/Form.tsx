@@ -19,7 +19,14 @@ const Form = () => {
         walletAdress:''
     }) 
 
-    const validate=(ev:any)=>{
+    function posteo(){
+      setLoader((false));
+      console.log("envio completo",input);
+    }
+
+    const [loader,setLoader] = useState(false)
+
+    const validate=async (ev:any)=>{
 
       //validate that mobile number its must be a number  
       //if(ev.target.name==='mobileNumber'&&(!(/\d/.test(ev.target.value))&& ev.target.value!=='')){return}
@@ -44,10 +51,10 @@ const Form = () => {
          //amount Validation
         if (input.amount===''){ 
             errors.amount = "Amount cannot be empty"
-            setErrors((errors)=>({...errors,amount:"Amount cannot be empty"}))
+            setErrors(()=>({...errors,amount:"Amount cannot be empty"}))
         } else{
             errors.amount = ""
-            setErrors((errors)=>({...errors,amount:""}))
+            setErrors(()=>({...errors,amount:""}))
         }
          //email Validation
         if (input.email===''){ 
@@ -88,8 +95,14 @@ const Form = () => {
 
         errors.amount||errors.email||errors.mobileNumber||errors.walletAdress||errors.walletPool
           ?console.log("hay errores")
-          :console.log("envio completo",input)  
+          :
+          (
+            setLoader(true),
+            setTimeout(posteo, 1000)
+          )
     }
+    
+
 
   return (
 <form id="msform">
@@ -101,7 +114,7 @@ const Form = () => {
     <input type="text" name="email" value={input.email} placeholder="E-Mail" onChange={(ev)=>validate(ev)} style={errors.email?{border:"2px solid red"}:{}} className={errors.email&&"form2"} />
     <input type="text" name="mobileNumber" value={input.mobileNumber} placeholder="Mobile Number" onChange={(ev)=>validate(ev)} style={errors.mobileNumber?{border:"2px solid red"}:{}} className={errors.mobileNumber&&"form2"}/>
     <input type="text" name="walletAdress" value={input.walletAdress} placeholder="Wallet Adress" onChange={(ev)=>validate(ev)} style={errors.walletAdress?{border:"2px solid red"}:{}} className={errors.walletAdress&&"form2"}/>
-    <input type="submit" onClick={(e)=>handleSubmit(e)} name="next" className="next action-button" value="Next" onChange={(ev)=>validate(ev)}  />
+    <input type="submit" onClick={(e)=>handleSubmit(e)} name="next" className="next action-button" value={loader?"loading...":"Next"} onChange={(ev)=>validate(ev)}  />
     <section className="errorsClass">
         {errors.walletPool?<div>{errors.walletPool} </div>:<></>}
         {errors.amount?<div>{errors.amount} </div>:<></>}
